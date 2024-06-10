@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "job_#{@job.id}" do %>
+  <%= render partial: "jobs/form", locals: { job: @job } %>
+<% end %>

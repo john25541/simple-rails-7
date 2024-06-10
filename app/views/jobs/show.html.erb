@@ -1,0 +1,6 @@
+<div id="job_<%= @job.id %>">
+  <h2><%= @job.title %></h2>
+  <p><%= @job.description %></p>
+  <%= link_to 'Edit', edit_job_path(@job), data: { turbo_frame: "job_#{@job.id}" } %>
+  <%= link_to 'Delete', @job, method: :delete, data: { confirm: 'Are you sure?', turbo_frame: "job_#{@job.id}" } %>
+</div>
