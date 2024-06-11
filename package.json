@@ -1,0 +1,12 @@
+{
+  "name": "simple-rails-7",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:john25541/simple-rails-7.git",
+  "author": "john25541 <nguyenvanloc1247@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.4"
+  }
+}
