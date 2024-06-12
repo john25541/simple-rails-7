@@ -17,7 +17,7 @@ class JobsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.turbo_stream
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("job_form", partial: "jobs/form", locals: { job: @job }) }
         format.html { render :new }
       end
     end
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("job_form", partial: "jobs/form", locals: { job: @job }) }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("job_#{@job.id}", partial: "jobs/form", locals: { job: @job }) }
         format.html { render :edit }
       end
     end

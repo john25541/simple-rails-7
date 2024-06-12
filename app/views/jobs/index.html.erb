@@ -1,8 +1,7 @@
 <h1>Jobs</h1>
 
-
 <%= render 'form', job: @job %>
-
-<div id="jobs">
+<%= turbo_stream_from "jobs" %>
+<%= turbo_frame_tag "jobs" do %>
   <%= render @jobs %>
-</div>
+<% end %>

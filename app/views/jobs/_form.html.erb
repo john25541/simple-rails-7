@@ -1,5 +1,18 @@
 <%= turbo_frame_tag job.persisted? ? dom_id(job) : "job_form" do %>
   <%= form_with(model: job, local: false) do |form| %>
+    <% if job.errors.any? %>
+      <div id="#error_explanation">
+        <h2>
+          <%= pluralize(job.errors.count, "error")%>
+          prohibited this job from being saved:
+        </h2>
+        <ul>
+          <%- job.errors.full_messages.each do |msg|%>
+            <li><%= msg%></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div>
       <%= form.label :title %>
       <%= form.text_field :title %>

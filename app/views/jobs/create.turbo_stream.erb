@@ -1,2 +1,2 @@
-<%= turbo_stream.append "jobs", partial: "jobs/job", locals: { job: @job } %>
+<%= turbo_stream.prepend "jobs", partial: "jobs/job", locals: { job: @job } %>
 <%= turbo_stream.replace "job_form", partial: "jobs/form", locals: { job: Job.new } %>
