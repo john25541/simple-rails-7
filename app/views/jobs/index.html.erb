@@ -1,5 +1,12 @@
 <h1>Jobs</h1>
 
+<div data-controller="hello">
+  <input data-hello-target="name" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
+
+<br>
+
 <%= render 'form', job: @job %>
 <%= turbo_stream_from "jobs" %>
 <%= turbo_frame_tag "jobs" do %>
